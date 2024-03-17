@@ -53,3 +53,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::put('/admin/products/edit/{id}', [ProductController::class, 'update'])->name('admin/products/update');
     Route::delete('/admin/products/destroy/{id}', [ProductController::class, 'destroy'])->name('admin/products/destroy');
 });
+
+// Add the following line at the end of your routes file
+Route::get('/welcome', function () {
+    return view('welcome');
+});
